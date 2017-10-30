@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [UA\tpereira]
+    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
+
