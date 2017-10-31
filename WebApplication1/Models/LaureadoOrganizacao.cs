@@ -7,23 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication1
+namespace WebApplication1.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Categoria
+    public partial class LaureadoOrganizacao
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Categoria()
-        {
-            this.PremioNobel = new HashSet<PremioNobel>();
-        }
-    
-        public int CategoriaId { get; set; }
+        public int LaureadoId { get; set; }
         public string Nome { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PremioNobel> PremioNobel { get; set; }
+        public virtual Laureado Laureado { get; set; }
     }
 }

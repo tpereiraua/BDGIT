@@ -1,4 +1,4 @@
-﻿@model WebApplication1.PremioNobel
+﻿@model WebApplication1.Models.PremioNobel
 
 @{
     ViewBag.Title = "Details";
@@ -48,3 +48,38 @@
     @Html.ActionLink("Edit", "Edit", new { id = Model.PremioNobelId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+   @if( @Model.Laureado.Count()==1)
+{
+<h3>Laureado</h3>
+}
+
+else
+{
+<h3>Laureados</h3>
+}
+
+<ul>@foreach(var item in Model.Laureado)
+{
+    if (item.LaureadoTipo == "I")
+    {
+    <li><i class="fa fa-use"></i><a href="@Url.Action("Details","LaureadoIndividuos",new { id= item.LaureadoId})" >
+        @Html.Raw(item.LaureadoIndividuo.Nome)
+        </a></li>
+    }
+    else
+    {
+        <li>
+            <i class="fa fa-building"></i><a href="@Url.Action("Details","LaureadoOrganizacaos",new { id= item.LaureadoId})">
+                @Html.Raw(item.LaureadoOrganizacao.Nome)
+            </a>
+        </li>
+    }
+
+}
+
+
+</ul>
+
+
+

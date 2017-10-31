@@ -7,14 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication1
+namespace WebApplication1.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Teste
+    public partial class LaureadosPorPaisAtual_Result
     {
-        public int TesteID { get; set; }
-        public Nullable<int> valor { get; set; }
+        public Nullable<int> count { get; set; }
+        public string nome { get; set; }
     }
 }

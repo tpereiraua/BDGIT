@@ -1,0 +1,74 @@
+﻿@model WebApplication1.Models.LaureadoIndividuo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LaureadoIndividuo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataNascimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataMorte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataMorte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CidadeNascimento.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CidadeNascimento.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CidadaMorte.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CidadaMorte.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Laureado.LaureadoTipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Laureado.LaureadoTipo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.LaureadoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

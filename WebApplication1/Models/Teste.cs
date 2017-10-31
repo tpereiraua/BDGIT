@@ -7,16 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication1
+namespace WebApplication1.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class LaureadoOrganizacao
+    public partial class Teste
     {
-        public int LaureadoId { get; set; }
-        public string Nome { get; set; }
-    
-        public virtual Laureado Laureado { get; set; }
+        public int TesteID { get; set; }
+        public Nullable<int> valor { get; set; }
     }
 }

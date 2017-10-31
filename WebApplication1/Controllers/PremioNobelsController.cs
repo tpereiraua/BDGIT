@@ -6,8 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication1.Models;
 
-namespace WebApplication1
+namespace WebApplication1.Controllers
 {
     public class PremioNobelsController : Controller
     {
@@ -27,7 +28,10 @@ namespace WebApplication1
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PremioNobel premioNobel = db.PremioNobel.Find(id);
+            int theId = id ?? 1;
+
+            //PremioNobel premioNobel = db.PremioNobel.Find(id);
+            PremioNobel premioNobel = db.PremioNobel.Where(p => p.PremioNobelId == theId).Include("Laureado").FirstOrDefault();
             if (premioNobel == null)
             {
                 return HttpNotFound();

@@ -6,112 +6,116 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using WebApplication1;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    public class CategoriasController : Controller
+    public class LaureadoOrganizacaosController : Controller
     {
         private NobelEntities db = new NobelEntities();
 
-        // GET: Categorias
+        // GET: LaureadoOrganizacaos
         public ActionResult Index()
         {
-            return View(db.Categoria.ToList());
+            var laureadoOrganizacao = db.LaureadoOrganizacao.Include(l => l.Laureado);
+            return View(laureadoOrganizacao.ToList());
         }
 
-        // GET: Categorias/Details/5
+        // GET: LaureadoOrganizacaos/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Categoria categoria = db.Categoria.Find(id);
-            if (categoria == null)
+            LaureadoOrganizacao laureadoOrganizacao = db.LaureadoOrganizacao.Find(id);
+            if (laureadoOrganizacao == null)
             {
                 return HttpNotFound();
             }
-            return View(categoria);
+            return View(laureadoOrganizacao);
         }
 
-        // GET: Categorias/Create
+        // GET: LaureadoOrganizacaos/Create
         public ActionResult Create()
         {
+            ViewBag.LaureadoId = new SelectList(db.Laureado, "LaureadoId", "LaureadoTipo");
             return View();
         }
 
-        // POST: Categorias/Create
+        // POST: LaureadoOrganizacaos/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CategoriaId,Nome")] Categoria categoria)
+        public ActionResult Create([Bind(Include = "LaureadoId,Nome")] LaureadoOrganizacao laureadoOrganizacao)
         {
             if (ModelState.IsValid)
             {
-                db.Categoria.Add(categoria);
+                db.LaureadoOrganizacao.Add(laureadoOrganizacao);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(categoria);
+            ViewBag.LaureadoId = new SelectList(db.Laureado, "LaureadoId", "LaureadoTipo", laureadoOrganizacao.LaureadoId);
+            return View(laureadoOrganizacao);
         }
 
-        // GET: Categorias/Edit/5
+        // GET: LaureadoOrganizacaos/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Categoria categoria = db.Categoria.Find(id);
-            if (categoria == null)
+            LaureadoOrganizacao laureadoOrganizacao = db.LaureadoOrganizacao.Find(id);
+            if (laureadoOrganizacao == null)
             {
                 return HttpNotFound();
             }
-            return View(categoria);
+            ViewBag.LaureadoId = new SelectList(db.Laureado, "LaureadoId", "LaureadoTipo", laureadoOrganizacao.LaureadoId);
+            return View(laureadoOrganizacao);
         }
 
-        // POST: Categorias/Edit/5
+        // POST: LaureadoOrganizacaos/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CategoriaId,Nome")] Categoria categoria)
+        public ActionResult Edit([Bind(Include = "LaureadoId,Nome")] LaureadoOrganizacao laureadoOrganizacao)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(categoria).State = EntityState.Modified;
+                db.Entry(laureadoOrganizacao).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(categoria);
+            ViewBag.LaureadoId = new SelectList(db.Laureado, "LaureadoId", "LaureadoTipo", laureadoOrganizacao.LaureadoId);
+            return View(laureadoOrganizacao);
         }
 
-        // GET: Categorias/Delete/5
+        // GET: LaureadoOrganizacaos/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Categoria categoria = db.Categoria.Find(id);
-            if (categoria == null)
+            LaureadoOrganizacao laureadoOrganizacao = db.LaureadoOrganizacao.Find(id);
+            if (laureadoOrganizacao == null)
             {
                 return HttpNotFound();
             }
-            return View(categoria);
+            return View(laureadoOrganizacao);
         }
 
-        // POST: Categorias/Delete/5
+        // POST: LaureadoOrganizacaos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Categoria categoria = db.Categoria.Find(id);
-            db.Categoria.Remove(categoria);
+            LaureadoOrganizacao laureadoOrganizacao = db.LaureadoOrganizacao.Find(id);
+            db.LaureadoOrganizacao.Remove(laureadoOrganizacao);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

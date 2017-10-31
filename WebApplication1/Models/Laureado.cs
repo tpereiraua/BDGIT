@@ -7,28 +7,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication1
+namespace WebApplication1.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Pais
+    public partial class Laureado
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Pais()
+        public Laureado()
         {
-            this.Cidade = new HashSet<Cidade>();
-            this.PaisAntigo = new HashSet<Pais>();
+            this.PremioNobel = new HashSet<PremioNobel>();
         }
     
-        public int PaisId { get; set; }
-        public string Nome { get; set; }
-        public Nullable<int> PaisAtualId { get; set; }
+        public int LaureadoId { get; set; }
+        public string LaureadoTipo { get; set; }
     
+        public virtual LaureadoIndividuo LaureadoIndividuo { get; set; }
+        public virtual LaureadoOrganizacao LaureadoOrganizacao { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cidade> Cidade { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pais> PaisAntigo { get; set; }
-        public virtual Pais PaisAtual { get; set; }
+        public virtual ICollection<PremioNobel> PremioNobel { get; set; }
     }
 }
