@@ -45,8 +45,12 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PremioNobelId }) |
-    @Html.ActionLink("Back to List", "Index")
+    <div class="btn-group">
+        <a href="@Url.Action("Edit", new { id = Model.PremioNobelId  })" class="btn btn-default" title="Edit"><i class="fa fa-pencil"></i></a>
+        <a href="@Url.Action("Index")" class="btn btn-default" title="Back to list"><i class="fa fa-retweet"></i></a>
+   </div>
+
+
 </p>
 
    @if( @Model.Laureado.Count()==1)
@@ -63,7 +67,7 @@ else
 {
     if (item.LaureadoTipo == "I")
     {
-    <li><i class="fa fa-use"></i><a href="@Url.Action("Details","LaureadoIndividuos",new { id= item.LaureadoId})" >
+    <li><i class="fa fa-user"></i><a href="@Url.Action("Details","LaureadoIndividuos",new { id= item.LaureadoId})" >
         @Html.Raw(item.LaureadoIndividuo.Nome)
         </a></li>
     }

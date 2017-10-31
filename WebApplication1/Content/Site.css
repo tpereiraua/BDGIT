@@ -2,3 +2,6 @@
 body{font-family:'Open Sans',sans-serif;}
 .body-content{padding-top: 52px; padding-bottom:52px;}
 footer{line-height:42px;}
+.pager-label-container{ height: 79px; padding-top: 15px;text-align: left;}
+.pager-left-container{ float:left;padding-top:15px;width:30%}
+.pager-right-container{ float:right;width:70%;text-align:right}

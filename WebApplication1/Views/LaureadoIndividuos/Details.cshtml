@@ -69,6 +69,10 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.LaureadoId }) |
-    @Html.ActionLink("Back to List", "Index")
+
+    <div class="btn-group">
+        <a href="@Url.Action("Edit", new { id = Model.LaureadoId  })" class="btn btn-default" title="Edit"><i class="fa fa-pencil"></i></a>
+
+        <a href="@Url.Action("Details", "PremioNobels", new { id = Model.LaureadoId}) " class="btn btn-default" title="Back to list"><i class="fa fa-retweet"></i></a>
+    </div>
 </p>
