@@ -24,6 +24,7 @@ namespace WebApplication2
             config.Formatters.JsonFormatter
             .SerializerSettings
             .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            WebApiConfig.Register(GlobalConfiguration.Configuration);
 
         }
     }

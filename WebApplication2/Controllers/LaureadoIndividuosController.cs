@@ -81,7 +81,19 @@ namespace WebApplication2.Controllers
                         //PremioNobel = new List<PremioNobelDTO>()
                         Filiacao = p.Filiacao.Select(m =>  new FiliacaoDTO()
                         {
-                            Nome = p.Nome,
+                            Nome = m.Nome,
+                            FiliacaoId = m.FiliacaoId,
+                            Cidade = new CidadeDTO()
+                            {
+                                CidadeId= m.Cidade.CidadeId,
+                                Nome = m.Cidade.Nome,
+                                Pais = new PaisDTO()
+                                {
+                                    PaisId = p.CidadeNascimento.PaisId,
+                                    Nome = p.CidadeNascimento.Pais.Nome,
+                                }
+                            }
+                            
                         }).ToList()
                     }).FirstOrDefault();
            

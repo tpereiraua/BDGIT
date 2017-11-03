@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebAppli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication2", "WebApplication2\WebApplication2.csproj", "{BD3BB7EC-83BB-42E6-A75E-33D7A5CCC02D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NobelApp", "NobelApp\NobelApp.csproj", "{8AD90571-B087-418E-8C66-1D7B5A590A18}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BD3BB7EC-83BB-42E6-A75E-33D7A5CCC02D} = {BD3BB7EC-83BB-42E6-A75E-33D7A5CCC02D}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +34,10 @@ Global
 		{BD3BB7EC-83BB-42E6-A75E-33D7A5CCC02D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD3BB7EC-83BB-42E6-A75E-33D7A5CCC02D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD3BB7EC-83BB-42E6-A75E-33D7A5CCC02D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AD90571-B087-418E-8C66-1D7B5A590A18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AD90571-B087-418E-8C66-1D7B5A590A18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AD90571-B087-418E-8C66-1D7B5A590A18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AD90571-B087-418E-8C66-1D7B5A590A18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
